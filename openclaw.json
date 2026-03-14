@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "project": "openclaw-x-video"
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/home/evan/openclaw-x-video",
+      "model": {
+        "primary": "anthropic/claude-sonnet-4-6"
+      },
+      "heartbeat": {
+        "every": "1h",
+        "target": "last",
+        "prompt": "Read HEARTBEAT.md if it exists, then execute your assigned role. Report HEARTBEAT_OK if nothing to do.",
+        "activeHours": {
+          "start": "08:00",
+          "end": "23:00"
+        },
+        "includeReasoning": false
+      },
+      "compaction": {
+        "mode": "safeguard",
+        "reserveTokensFloor": 20000,
+        "memoryFlush": {
+          "enabled": true,
+          "softThresholdTokens": 4000
+        }
+      },
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "5m",
+        "keepLastAssistants": 3
+      }
+    },
+    "list": [
+      {
+        "id": "scraper",
+        "name": "X Scraper",
+        "agentDir": "/home/evan/openclaw-x-video/agents/scraper",
+        "workspace": "/home/evan/openclaw-x-video",
+        "heartbeat": {
+          "every": "1h",
+          "prompt": "Execute the scraper workflow defined in AGENT.md: scrape X timeline, run LLM analysis, enqueue the task, then trigger producer."
+        },
+        "sandbox": {
+          "mode": "off"
+        }
+      },
+      {
+        "id": "analyst",
+        "name": "Content Analyst",
+        "agentDir": "/home/evan/openclaw-x-video/agents/analyst",
+        "workspace": "/home/evan/openclaw-x-video",
+        "heartbeat": {
+          "every": "0m"
+        },
+        "sandbox": {
+          "mode": "off"
+        }
+      },
+      {
+        "id": "producer",
+        "name": "Video Producer",
+        "agentDir": "/home/evan/openclaw-x-video/agents/producer",
+        "workspace": "/home/evan/openclaw-x-video",
+        "heartbeat": {
+          "every": "0m"
+        },
+        "sandbox": {
+          "mode": "off"
+        }
+      }
+    ]
+  }
+}

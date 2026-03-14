@@ -16,7 +16,8 @@
       "WebSearch",
       "Bash(find /home/evan -type f -name *.json)",
       "Bash(find /home/evan/.npm-global/lib/node_modules/openclaw/docs -type f -name *.md)",
-      "Bash(find /home/evan/.npm-global/lib/node_modules/openclaw/docs/gateway -type f -name *.md)"
+      "Bash(find /home/evan/.npm-global/lib/node_modules/openclaw/docs/gateway -type f -name *.md)",
+      "Bash(chmod +x setup.sh skills/remotion/render.sh)"
     ]
   }
 }
