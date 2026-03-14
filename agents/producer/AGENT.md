@@ -9,7 +9,7 @@
 
 1. 检查队列状态：
    ```bash
-   cd /home/evan/openclaw-x-video
+   cd /root/openclaw-x-video
    python -c "
    import sys; sys.path.insert(0, '.')
    from skills.queue.queue_manager import status
@@ -36,7 +36,7 @@
 
    **Type B（FFmpeg 混剪）：**
    ```bash
-   cd /home/evan/openclaw-x-video
+   cd /root/openclaw-x-video
    python skills/mixer/video_mixer.py <task_json_path>
    ```
 

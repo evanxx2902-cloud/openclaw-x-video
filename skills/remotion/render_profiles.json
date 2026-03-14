@@ -1,0 +1,28 @@
+{
+  "profiles": {
+    "fast": {
+      "concurrency": 1,
+      "quality": 50,
+      "crf": 28,
+      "description": "快速渲染，文件较小"
+    },
+    "balanced": {
+      "concurrency": 1,
+      "quality": 80,
+      "crf": 23,
+      "description": "平衡模式，推荐使用"
+    },
+    "high_quality": {
+      "concurrency": 1,
+      "quality": 95,
+      "crf": 18,
+      "description": "高质量，文件较大"
+    }
+  },
+  "default": "balanced",
+  "server_spec": {
+    "cpu_cores": 2,
+    "memory_gb": 4,
+    "recommended_profile": "balanced"
+  }
+}

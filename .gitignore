@@ -23,6 +23,14 @@ data/.queue.lock
 data/x_auth_state.json
 data/bg_videos/
 output/
+logs/
+*.log
+*.png
+*.html
+*.json.backup
+*.sh.backup
+*.ts.backup
+*.py.backup
 
 # 视频/音频临时文件
 *.mp4
@@ -33,3 +41,7 @@ output/
 # 系统文件
 .DS_Store
 Thumbs.db
+
+# 测试文件
+test_*.py
+start_agents.sh

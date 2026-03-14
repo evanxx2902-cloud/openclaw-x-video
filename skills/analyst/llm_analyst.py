@@ -80,6 +80,16 @@ def analyze(raw_path: Path) -> Path:
                 max_tokens=1500,
             )
             content = resp.choices[0].message.content.strip()
+            
+            # 清理响应内容（移除markdown代码块）
+            if content.startswith('```json'):
+                content = content[7:]  # 移除 ```json
+            if content.startswith('```'):
+                content = content[3:]  # 移除 ```
+            if content.endswith('```'):
+                content = content[:-3]  # 移除结尾的 ```
+            content = content.strip()
+            
             task = json.loads(content)
             break
         except json.JSONDecodeError:

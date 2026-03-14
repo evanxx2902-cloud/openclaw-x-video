@@ -14,7 +14,7 @@
 
 2. 运行分析脚本：
    ```bash
-   cd /home/evan/openclaw-x-video
+   cd /root/openclaw-x-video
    python skills/analyst/llm_analyst.py <raw_json_path>
    ```
 

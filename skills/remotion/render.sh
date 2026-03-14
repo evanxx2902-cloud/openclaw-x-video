@@ -46,11 +46,14 @@ if [ ! -d "node_modules" ]; then
   npm install --silent
 fi
 
+# 使用 --duration-in-frames 参数
 npx remotion render \
-  --composition TypeA \
-  --props "$PROPS" \
-  --frames "0-$((TOTAL_FRAMES - 1))" \
-  --concurrency "${REMOTION_CONCURRENCY:-1}" \
-  --output "$OUTPUT"
+  src/index.ts \
+  TypeA \
+  --props="$PROPS" \
+  --duration-in-frames="$TOTAL_FRAMES" \
+  --concurrency="${REMOTION_CONCURRENCY:-1}" \
+  --codec="h264" \
+  --output="$OUTPUT"
 
 echo "[remotion] 渲染完成: $OUTPUT"

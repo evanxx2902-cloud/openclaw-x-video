@@ -73,9 +73,16 @@ def mark_done(task_path: str, success: bool):
     with _locked():
         q = read_queue()
         q["current"] = None
+        
+        # 从pending队列中移除
+        if task_path in q["pending"]:
+            q["pending"].remove(task_path)
+        
+        # 添加到完成或失败队列
         target = q["completed"] if success else q["failed"]
         if task_path not in target:
             target.append(task_path)
+        
         _write_queue(q)
         print(f"[queue] {'完成' if success else '失败'}: {task_path}")
 

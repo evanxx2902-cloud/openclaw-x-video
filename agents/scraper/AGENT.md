@@ -7,10 +7,10 @@
 
 ## 执行步骤
 
-1. 运行抓取脚本：
+1. 运行智能抓取脚本（优先尝试真实API，失败时使用模拟数据）：
    ```bash
-   cd /home/evan/openclaw-x-video
-   python skills/scraper/x_scraper.py --limit 20 --min-likes 500
+   cd /root/openclaw-x-video
+   python skills/scraper/x_scraper_smart.py --limit 20 --min-likes 500
    ```
 
 2. 确认输出文件已生成在 `data/tasks/<timestamp>_raw.json`
@@ -30,6 +30,17 @@
    ```
 
 5. 触发 Producer Agent 处理队列。
+
+## X API 配置说明
+
+要使用真实X API，需要在 `config/.env` 中添加：
+```
+X_API_KEY=你的X_API密钥
+```
+
+申请X API Key: https://developer.twitter.com
+
+在获得真实API Key之前，系统会自动使用高质量的模拟数据测试完整流程。
 
 ## 错误处理
 - 若登录失败：检查 `config/.env` 中的 X_USERNAME / X_PASSWORD

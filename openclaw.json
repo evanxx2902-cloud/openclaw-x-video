@@ -5,9 +5,9 @@
   },
   "agents": {
     "defaults": {
-      "workspace": "/home/evan/openclaw-x-video",
+      "workspace": "/root/openclaw-x-video",
       "model": {
-        "primary": "anthropic/claude-sonnet-4-6"
+        "primary": "deepseek/deepseek-chat"
       },
       "heartbeat": {
         "every": "1h",
@@ -37,8 +37,8 @@
       {
         "id": "scraper",
         "name": "X Scraper",
-        "agentDir": "/home/evan/openclaw-x-video/agents/scraper",
-        "workspace": "/home/evan/openclaw-x-video",
+        "agentDir": "/root/openclaw-x-video/agents/scraper",
+        "workspace": "/root/openclaw-x-video",
         "heartbeat": {
           "every": "1h",
           "prompt": "Execute the scraper workflow defined in AGENT.md: scrape X timeline, run LLM analysis, enqueue the task, then trigger producer."
@@ -50,8 +50,8 @@
       {
         "id": "analyst",
         "name": "Content Analyst",
-        "agentDir": "/home/evan/openclaw-x-video/agents/analyst",
-        "workspace": "/home/evan/openclaw-x-video",
+        "agentDir": "/root/openclaw-x-video/agents/analyst",
+        "workspace": "/root/openclaw-x-video",
         "heartbeat": {
           "every": "0m"
         },
@@ -62,8 +62,8 @@
       {
         "id": "producer",
         "name": "Video Producer",
-        "agentDir": "/home/evan/openclaw-x-video/agents/producer",
-        "workspace": "/home/evan/openclaw-x-video",
+        "agentDir": "/root/openclaw-x-video/agents/producer",
+        "workspace": "/root/openclaw-x-video",
         "heartbeat": {
           "every": "0m"
         },
