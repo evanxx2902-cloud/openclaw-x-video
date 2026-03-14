@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /home/evan/openclaw-x-video log --oneline -10)",
+      "Bash(git -C /home/evan/openclaw-x-video status)",
+      "Bash(git -C /home/evan/openclaw-x-video ls-tree -r HEAD)",
+      "Bash(git -C /home/evan/openclaw-x-video show HEAD:README.md)",
+      "Read(//home/evan/**)",
+      "Bash(find /home/evan/.npm-global/lib/node_modules/openclaw -type f -name *.md)",
+      "Bash(find /home/evan -type f \\\\\\(-name *remotion* -o -name *video* \\\\\\))",
+      "Bash(find /home/evan -type f -name *.md)",
+      "Bash(find /home/evan -type f -name *.ts -o -name *.js)",
+      "Bash(find /home/evan -type f \\\\\\(-name *.py -o -name *.sh \\\\\\))",
+      "Bash(grep -r agents.list /home/evan/.npm-global/lib/node_modules/openclaw/docs --include=*.md)",
+      "Bash(find /home/evan/.npm-global/lib/node_modules/openclaw -type f -name *.ts -o -name *.js)",
+      "WebSearch",
+      "Bash(find /home/evan -type f -name *.json)",
+      "Bash(find /home/evan/.npm-global/lib/node_modules/openclaw/docs -type f -name *.md)",
+      "Bash(find /home/evan/.npm-global/lib/node_modules/openclaw/docs/gateway -type f -name *.md)"
+    ]
+  }
+}
